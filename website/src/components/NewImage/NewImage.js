@@ -1,13 +1,14 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faImage } from '@fortawesome/free-solid-svg-icons'
+import './NewImage.css'
 
 export default props => 
   <div className='buttons fadein'> 
     <div className='button'>
       <label htmlFor='single'>
-        <FontAwesomeIcon icon={faImage} color='#3B5998' size='10x' />
+        <FontAwesomeIcon icon={faImage} color='#3B5998' size='10x' id='picker'/>
       </label>
-      <input type='file' id='single' onChange={props.onChange} /> 
+      <input type='file' id='single' onChange={props.onChange}  /> 
     </div>
   </div>

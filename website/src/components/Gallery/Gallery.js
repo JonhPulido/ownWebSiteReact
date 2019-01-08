@@ -27,7 +27,6 @@ class Gallery extends React.Component {
   onChange = e => {
     const errs = [] 
     const files = Array.from(e.target.files)
-    console.log()
 
     if (files.length > 3) {
       const msg = 'Only 3 images can be uploaded at a time'
@@ -66,12 +65,12 @@ class Gallery extends React.Component {
       return res.json()
     })
     .then(image => {
-      /*this.props.addPic(images)*/
-      console.log('this.state.images')
-      this.setState({images : this.state.images.push(
+      let photos = this.state.images;
+      photos.push(
         { img : image[0].secure_url,
           name : "new Image Uploaded"}
-      )});
+      )
+      this.setState({images : photos})
     })
     .catch(err => {
       err.json().then(e => {
@@ -90,7 +89,7 @@ class Gallery extends React.Component {
           <Image imageObj={imageObj}/>
         </div>
         )}
-        <NewImage onChange={onChange}/>
+        <NewImage onChange={this.onChange}/>
       </div>
       
     );

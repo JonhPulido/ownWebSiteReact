@@ -83,7 +83,6 @@ class App extends Component {
       <div className = "App">
           <Navbar onRouteChange = {this.onRouteChange}/>
           {this.renderSwitch(route)}
-          {console.log(urls)}
           <Footer/>
       </div>
     );
